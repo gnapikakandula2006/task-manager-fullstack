@@ -20,7 +20,24 @@ A full-stack task management app built with React (Vite) and Spring Boot, featur
 cd task-manager-backend
 mvn spring-boot:run
 
-# Frontend
+## 🎨 Frontend Setup (React + Vite)
+This is the user interface layer of the Task Manager app. It interacts with the backend API to display, create, and manage tasks in a responsive layout.
+
+### 📁 Folder: `task-manager-frontend`
+
+---
+
+### 🧰 Requirements
+
+- Node.js (v18 or higher recommended)
+- npm (comes with Node.js)
+- Browser (Chrome, Firefox, etc.)
+
+---
+
+### ⚙️ How to Run
+
+```bash
 cd task-manager-frontend
 npm install
 npm run dev
