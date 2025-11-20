@@ -1,62 +1,42 @@
-# Task Manager Fullstack
-A full-stack task management app built with React (Vite) and Spring Boot, featuring CRUD operations and Jenkins CI/CD.
+# 📝 Task Manager Fullstack
 
-# 🛠️ Tech Stack
-- Frontend: React + Vite
-- Backend: Spring Boot
-- Database: MySQL
-- DevOps: Jenkins CI/CD
+A full-stack task management app built with **React (Vite)** and **Spring Boot**, featuring CRUD operations and Jenkins CI/CD integration.
 
-# 🚀 Features
-- Add, view, and delete tasks
-- RESTful API integration
-- Responsive UI
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React + Vite  
+- **Backend**: Spring Boot  
+- **Database**: MySQL  
+- **DevOps**: Jenkins CI/CD
+
+---
+
+## 🚀 Features
+
+- Add, view, update, and delete tasks  
+- RESTful API integration  
+- Responsive UI  
 - CI/CD pipeline with Jenkins
 
-# 🧪 Local Setup
-
-# Backend
-```bash
-cd task-manager-backend
-mvn spring-boot:run
-
-## 🎨 Frontend Setup (React + Vite)
-This is the user interface layer of the Task Manager app. It interacts with the backend API to display, create, and manage tasks in a responsive layout.
-
-### 📁 Folder: `task-manager-frontend`
-
 ---
 
-### 🧰 Requirements
+## 🔗 Backend Setup (Spring Boot)
 
-- Node.js (v18 or higher recommended)
-- npm (comes with Node.js)
-- Browser (Chrome, Firefox, etc.)
+This is the RESTful API layer of the Task Manager app. It handles task creation, retrieval, updating, and deletion, and connects to a MySQL database.
 
----
+### 📁 Folder: `task-manager-backend`
+
+### 📦 Requirements
+
+- Java 17+
+- Maven
+- MySQL running locally or remotely
 
 ### ⚙️ How to Run
 
 ```bash
-cd task-manager-frontend
-npm install
-npm run dev
+cd task-manager-backend
+mvn spring-boot:run
 
-#  **API Endpoints**
-Document your backend routes.
-
-## 🔄 API Endpoints
-| Method | Endpoint         | Description       |
-|--------|------------------|-------------------|
-| GET    | /api/tasks       | Fetch all tasks   |
-| POST   | /api/tasks       | Create a new task |
-| DELETE | /api/tasks/{id}  | Delete a task     |
-
-## 🔁 Jenkins CI/CD
-- Clones the GitHub repo
-- Builds backend with Maven
-- Builds frontend with npm
-- Deploys both parts
-
-## 📄 License
-This project is licensed under the MIT License.
