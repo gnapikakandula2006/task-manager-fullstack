@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: task-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Gnapika@0804
+      MYSQL_DATABASE: taskdb
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pGnapika@0804"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  backend:
+    build: ./task-manager-backend
+    ports:
+      - "9090:9090"
+    container_name: task-backend
+    depends_on:
+       mysql:
+          condition: service_healthy
+
+    restart: unless-stopped
+
+  frontend:
+    build: ./task-manager-frontend
+    ports:
+      - "80:80"
+    container_name: task-frontend
+    restart: unless-stopped
