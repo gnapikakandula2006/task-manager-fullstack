@@ -8,18 +8,18 @@ pipeline {
 
   stages {
     stage('Clone Repository') {
-  steps {
-    git branch: 'main', url: 'https://github.com/gnapikakandula2006/task-manager-fullstack.git'
-  }
-}
+      steps {
+        git branch: 'main', url: 'https://github.com/gnapikakandula2006/task-manager-fullstack.git'
+      }
+    }
 
     stage('Build Backend') {
-  steps {
-    dir('task-manager-backend') {
-      sh 'mvn clean install'
+      steps {
+        dir('task-manager-backend') {
+          sh 'mvn clean install'
+        }
+      }
     }
-  }
-}
 
     stage('Build Frontend') {
       steps {
@@ -27,6 +27,13 @@ pipeline {
           sh 'npm install'
           sh 'npm run build'
         }
+      }
+    }
+
+    stage('Docker Build & Run') {
+      steps {
+        sh 'docker-compose build'
+        sh 'docker-compose up -d'
       }
     }
 
