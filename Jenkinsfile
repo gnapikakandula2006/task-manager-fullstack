@@ -8,10 +8,10 @@ pipeline {
 
   stages {
     stage('Clone Repository') {
-      steps {
-        git 'https://github.com/gnapikakandula2006/task-manager-fullstack.git'
-      }
-    }
+  steps {
+    git branch: 'main', url: 'https://github.com/gnapikakandula2006/task-manager-fullstack.git'
+  }
+}
 
     stage('Build Backend') {
       steps {
