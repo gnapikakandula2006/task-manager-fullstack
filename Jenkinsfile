@@ -32,10 +32,9 @@ pipeline {
 
     stage('Docker Build & Run') {
   steps {
-    script {
-      def composePath = "${env.WORKSPACE}/docker-compose.yml"
-      sh "docker-compose -f ${composePath} build"
-      sh "docker-compose -f ${composePath} up -d"
+    dir('.') {
+      sh 'docker-compose -f docker-compose.yml build'
+      sh 'docker-compose -f docker-compose.yml up -d'
     }
   }
 }
