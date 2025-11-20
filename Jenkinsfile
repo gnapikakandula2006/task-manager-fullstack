@@ -1,10 +1,9 @@
 pipeline {
   agent any
 
-  environment {
-    NODE_HOME = tool name: 'Node 18', type: 'NodeJS'
-    MAVEN_HOME = tool name: 'Maven 3.9', type: 'maven'
-    PATH = "${env.NODE_HOME}/bin:${env.MAVEN_HOME}/bin:${env.PATH}"
+  tools {
+    nodejs 'Node18'
+    maven 'Maven 3.9'
   }
 
   stages {
