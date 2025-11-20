@@ -14,12 +14,12 @@ pipeline {
 }
 
     stage('Build Backend') {
-      steps {
-        dir('task-manager-backend') {
-          sh 'mvn clean install'
-        }
-      }
+  steps {
+    dir('task-manager-backend/springboot') {
+      sh 'mvn clean install'
     }
+  }
+}
 
     stage('Build Frontend') {
       steps {
