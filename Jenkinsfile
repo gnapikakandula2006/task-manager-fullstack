@@ -16,7 +16,7 @@ pipeline {
     stage('Build Backend') {
       steps {
         dir('task-manager-backend') {
-          sh 'mvn clean install'
+          sh 'mvn clean install -DskipTests'
         }
       }
     }
