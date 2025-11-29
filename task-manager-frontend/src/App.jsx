@@ -8,7 +8,7 @@ function App() {
 
   // Fetch tasks from backend
   const loadTasks = () => {
-    axios.get("http://localhost:9090/api/tasks")
+    axios.get("http://localhost:8082/api/tasks")
       .then(res => setTasks(res.data))
       .catch(err => console.error("Error fetching tasks:", err));
   };
@@ -23,7 +23,7 @@ function App() {
 
     const newTask = { title, description };
 
-    axios.post("http://localhost:9090/api/tasks", newTask)
+    axios.post("http://localhost:8082/api/tasks", newTask)
       .then(() => {
         setTitle("");
         setDescription("");

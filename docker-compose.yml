@@ -16,7 +16,7 @@ services:
   backend:
     build: ./task-manager-backend
     ports:
-      - "9090:9090"
+      - "8082:8082"
     container_name: task-backend
     depends_on:
        mysql:
